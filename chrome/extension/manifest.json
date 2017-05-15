@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "SwitchHosts!",
+  "version": "1.0.0",
+  "description": "Chrome extension for SwitchHosts!",
+  "icons": {
+    "16": "images/logo.png",
+    "32": "images/logo@2x.png",
+    "48": "images/logo@3x.png",
+    "64": "images/logo@4x.png",
+    "128": "images/logo@128w.png"
+  },
+  "author": "oldj",
+  "options_page": "options.html",
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "contextMenus"
+  ],
+  "browser_action": {
+    "default_icon": "images/logoTemplate@128w.png",
+    "default_title": "SwitchHosts!",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "scripts": [
+      "bg.js"
+    ]
+  },
+  "web_accessible_resources": [
+  ]
+}
